@@ -2,7 +2,7 @@ joint1:
   kinematic:
     x: 0
     y: 0
-    z: 0.333
+    z: 0.253
     roll: 0
     pitch: 0
     yaw: 0
@@ -10,17 +10,17 @@ joint1:
 joint2:
   kinematic:
     x: 0
-    y: 0
-    z: 0
+    y: -0.0585
+    z: 0.07696
     roll: -1.570796326794897
-    pitch: 0
+    pitch: 0.785
     yaw: 0
 
 joint3:
   kinematic:
     x: 0
-    y: -0.316
-    z: 0
+    y: -0.2445
+    z: 0.0585
     roll: 1.570796326794897
     pitch: 0
     yaw: 0
