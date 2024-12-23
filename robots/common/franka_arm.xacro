@@ -90,7 +90,7 @@
       <xacro:franka-kinematics name="joint4" config="${kinematics}" />
       <parent link="${prefix}link3" />
       <child link="${prefix}link4" />
-      <axis xyz="0 0 1" />
+      <axis xyz="0 1 0" />
       <xacro:franka-limits name="joint4" config="${joint_limits}" />
       <xacro:franka-dynamics name="joint4" config="${dynamics}" />
     </joint>
