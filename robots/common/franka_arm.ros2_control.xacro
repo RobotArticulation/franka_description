@@ -28,10 +28,16 @@
           </xacro:if>
 
           <xacro:if value="${use_fake_hardware == 0 and gazebo == 0 and multi_arm == 0}">
+            <plugin>dynamixel_hardware/DynamixelHardware</plugin>
+            <param name="usb_port">/dev/ttyACM0</param>
+            <param name="baud_rate">1000000</param>
+          </xacro:if>
+
+          <!-- <xacro:if value="${use_fake_hardware == 0 and gazebo == 0 and multi_arm == 0}">
             <plugin>franka_hardware/FrankaHardwareInterface</plugin>
             <param name="robot_ip">${robot_ip}</param>
             <param name="arm_prefix">${arm_prefix}</param>
-          </xacro:if>
+          </xacro:if> -->
           <xacro:if value="${use_fake_hardware == 0 and gazebo == 0 and multi_arm == 1}">
             <plugin>franka_hardware/MultiFrankaHardwareInterface</plugin>
             <param name="robot_ip">${robot_ip}</param>
@@ -64,13 +70,13 @@
         </joint>
       </xacro:macro>
 
-      <xacro:configure_joint joint_name="${arm_prefix_modified}${arm_id}_joint1" initial_position="0.0"/>
+      <xacro:configure_joint joint_name="${arm_prefix_modified}${arm_id}_joint1" initial_position="${pi}"/>
       <xacro:configure_joint joint_name="${arm_prefix_modified}${arm_id}_joint2" initial_position="0.0"/>
       <xacro:configure_joint joint_name="${arm_prefix_modified}${arm_id}_joint3" initial_position="0.0"/>
       <xacro:configure_joint joint_name="${arm_prefix_modified}${arm_id}_joint4" initial_position="0.0"/>
-      <xacro:configure_joint joint_name="${arm_prefix_modified}${arm_id}_joint5" initial_position="0.0"/>
-      <xacro:configure_joint joint_name="${arm_prefix_modified}${arm_id}_joint6" initial_position="${pi/2}"/>
-      <xacro:configure_joint joint_name="${arm_prefix_modified}${arm_id}_joint7" initial_position="${pi/4}"/>
+      <xacro:configure_joint joint_name="${arm_prefix_modified}${arm_id}_joint5" initial_position="${pi/2}"/>
+      <xacro:configure_joint joint_name="${arm_prefix_modified}${arm_id}_joint6" initial_position="${pi}"/>
+      <xacro:configure_joint joint_name="${arm_prefix_modified}${arm_id}_joint7" initial_position="0"/>
       <xacro:if value="${gazebo and hand}">
         <xacro:configure_joint joint_name="${arm_id}_finger_joint1" initial_position="0.0" />
       </xacro:if>
