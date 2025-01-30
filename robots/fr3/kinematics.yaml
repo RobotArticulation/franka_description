@@ -64,9 +64,9 @@ joint7:
 # Joint to tool origin
 joint8:
   kinematic:
-    x: -0.2
+    x: 0
     y: 0
     z: 0
     roll: 0
-    pitch: 0
+    pitch: 1.570796326794897
     yaw: 0
